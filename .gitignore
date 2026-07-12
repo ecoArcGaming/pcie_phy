@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+
+# Icarus Verilog
+sim/*.vvp
+
+# Cocotb
+sim/sim_build/
+sim/results.xml
+sim/*.log
+
+# Waveforms
+sim/*.vcd
+sim/*.fst
+
+# Verilator (optional fast-regression path)
+sim/obj_dir/
+
+# Vivado / FPGA artifacts 
+fpga/.Xil/
+fpga/*.wdb
+fpga/*.jou
+fpga/*.pb
+fpga/*.log
+fpga/*.str
+
+*.md
+.claude/
