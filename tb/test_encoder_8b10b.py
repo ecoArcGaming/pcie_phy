@@ -114,6 +114,63 @@ async def test_reset_and_idle(dut):
 
 
 @cocotb.test()
+async def test_exhaustive_data(dut):
+    """All 256 data bytes, driven twice so each is encoded from varying RD."""
+    await _start_clock(dut)
+    await _reset(dut)
+    stream = [(b, False) for b in range(256)] * 2
+    await run_stream(dut, stream)
+
+
+@cocotb.test()
+async def test_all_data_bytes_both_disparities(dut):
+    """Every data byte encoded from BOTH RD- and RD+ starting disparity."""
+    await _start_clock(dut)
+    await _reset(dut)
+    targets = [(b, False, rd) for b in range(256) for rd in (NEG, POS)]
+    await run_stream(dut, build_targets(targets))
+
+
+@cocotb.test()
+async def test_all_k_codes_both_disparities(dut):
+    """All 12 valid control symbols from both starting disparities."""
+    await _start_clock(dut)
+    await _reset(dut)
+    ks = [(28, y) for y in range(8)] + [(x, 7) for x in (23, 27, 29, 30)]
+    targets = [((y << 5) | x, True, rd) for (x, y) in ks for rd in (NEG, POS)]
+    await run_stream(dut, build_targets(targets))
+
+
+@cocotb.test()
+async def test_dx_a7_alternate(dut):
+    """D.x.7 alternate (D.x.A7) selection: x in {17,18,20} at RD-, x in
+    {11,13,14} at RD+ take the alternate; the opposite RD takes the primary.
+    Both branches are exercised for each x."""
+    await _start_clock(dut)
+    await _reset(dut)
+    targets = []
+    for x in (17, 18, 20, 11, 13, 14):
+        byte = (7 << 5) | x
+        targets.append((byte, False, NEG))
+        targets.append((byte, False, POS))
+    await run_stream(dut, build_targets(targets))
+
+
+@cocotb.test()
+async def test_invalid_k_sets_code_err(dut):
+    """k_in with a non-control code raises code_err; valid K does not."""
+    await _start_clock(dut)
+    await _reset(dut)
+    stream = []
+    for byte in range(256):
+        x, y = byte & 0x1F, (byte >> 5) & 0x7
+        if not is_valid_k(x, y):          # invalid control codes -> err
+            stream.append((byte, True))
+    # run_stream already asserts code_err matches the model for every symbol.
+    await run_stream(dut, stream)
+
+
+@cocotb.test()
 async def test_random_stream(dut):
     """Long randomized mix of data and valid control symbols."""
     await _start_clock(dut)
@@ -121,7 +178,7 @@ async def test_random_stream(dut):
     rng = random.Random(0xC0FFEE)
     valid_ks = [(28, y) for y in range(8)] + [(x, 7) for x in (23, 27, 29, 30)]
     stream = []
-    for _ in range(1):
+    for _ in range(3000):
         if rng.random() < 0.15:
             x, y = rng.choice(valid_ks)
             stream.append(((y << 5) | x, True))

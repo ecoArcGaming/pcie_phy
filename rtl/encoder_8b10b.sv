@@ -32,20 +32,8 @@ module encoder_8b10b (
     wire [4:0] x = data_in[4:0];
     wire [2:0] y = data_in[7:5];
 
-    //  popcount helpers 
-    function automatic [3:0] cnt6(input logic [5:0] v);
-        cnt6 = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-    endfunction
-    function automatic [3:0] cnt4(input logic [3:0] v);
-        cnt4 = v[0] + v[1] + v[2] + v[3];
-    endfunction
-    function automatic [3:0] cnt10(input logic [9:0] v);
-        cnt10 = v[0] + v[1] + v[2] + v[3] + v[4]
-              + v[5] + v[6] + v[7] + v[8] + v[9];
-    endfunction
-
     // 5b/6b: RD=-1 (minus) code
-    
+
     logic [5:0] c6m;    // {a b c d e i}, a = c6m[5]
     always_comb begin
         case (x)
@@ -69,23 +57,15 @@ module encoder_8b10b (
         endcase
     end
 
-    // Plus (RD=+1) 6b code: complement of the minus code
-    logic [5:0] c6p;
-    always_comb begin
-        if (cnt6(c6m) != 4'd3)          c6p = ~c6m;        // +2 disparity
-        else if (x == 5'd7)             c6p = ~c6m;        // D.07 special
-        else                            c6p = c6m;         // balanced: same
-    end
 
-    logic [5:0] c6;
-    assign c6 = (rd == 1'b0) ? c6m : c6p;
+    wire [3:0] n_c6m = c6m[0] + c6m[1] + c6m[2] + c6m[3] + c6m[4] + c6m[5];
+    wire [5:0] c6p = (n_c6m != 4'd3) ? ~c6m
+                   : (x == 5'd7)     ? ~c6m
+                   :                    c6m;
 
-    // RD after the 6b sub-block.
-    logic rd6;
-    always_comb begin
-        if      (cnt6(c6) == 4'd3) rd6 = rd;               // balanced
-        else                       rd6 = (cnt6(c6) > 4'd3) ? 1'b1 : 1'b0;
-    end
+    wire [5:0] c6  = (rd == 1'b0) ? c6m : c6p;
+    wire [3:0] n_c6 = c6[0] + c6[1] + c6[2] + c6[3] + c6[4] + c6[5];
+    wire rd6 = (n_c6 == 4'd3) ? rd : (n_c6 > 4'd3);
 
     
     // 3b/4b (data path). Single codes for y in {1,2,5,6}; RD-dependent
@@ -125,11 +105,8 @@ module encoder_8b10b (
     end
 
     // RD after the 4b sub-block (used for the data path).
-    logic rd4;
-    always_comb begin
-        if      (cnt4(c4) == 4'd2) rd4 = rd6;              // balanced
-        else                       rd4 = (cnt4(c4) > 4'd2) ? 1'b1 : 1'b0;
-    end
+    wire [3:0] n_c4 = c4[0] + c4[1] + c4[2] + c4[3];
+    wire rd4 = (n_c4 == 4'd2) ? rd6 : (n_c4 > 4'd2);
 
     wire [9:0] data_word = {c6, c4};
 
@@ -169,11 +146,9 @@ module encoder_8b10b (
     wire [9:0]  k_word  = (rd == 1'b0) ? k_neg : k_pos;
 
     // RD after a control symbol (from its 10-bit disparity).
-    logic rdk;
-    always_comb begin
-        if      (cnt10(k_word) == 4'd5) rdk = rd;          // balanced
-        else                            rdk = (cnt10(k_word) > 4'd5) ? 1'b1 : 1'b0;
-    end
+    wire [3:0] n_kw = k_word[0] + k_word[1] + k_word[2] + k_word[3] + k_word[4]
+                    + k_word[5] + k_word[6] + k_word[7] + k_word[8] + k_word[9];
+    wire rdk = (n_kw == 4'd5) ? rd : (n_kw > 4'd5);
 
     
     // Output select. Invalid K falls back to the data encoding (with error),

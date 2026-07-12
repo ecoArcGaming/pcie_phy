@@ -1,21 +1,11 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1783880705" />
-    <testcase name="test_reset_and_idle" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="79" time="0.0010008811950683594" sim_time_ns="71.0" ratio_time="70937.49023344449" />
-    <testcase name="test_roundtrip_data" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="91" time="0.0010006427764892578" sim_time_ns="51.0" ratio_time="50967.239456754825">
-      <failure error_type="ValueError" error_msg="Cannot convert Logic('X') to int" />
-    </testcase>
-    <testcase name="test_roundtrip_k" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="101" time="0.0" sim_time_ns="51.000000000000014" ratio_time="inf">
-      <failure error_type="ValueError" error_msg="Cannot convert Logic('X') to int" />
-    </testcase>
-    <testcase name="test_roundtrip_random" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="114" time="0.0009980201721191406" sim_time_ns="51.0" ratio_time="51101.17152412805">
-      <failure error_type="ValueError" error_msg="Cannot convert Logic('X') to int" />
-    </testcase>
-    <testcase name="test_invalid_codewords" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="131" time="0.0009996891021728516" sim_time_ns="51.00000000000003" ratio_time="51015.86072024806">
-      <failure error_type="ValueError" error_msg="Cannot convert Logic('X') to int" />
-    </testcase>
-    <testcase name="test_disparity_error" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="142" time="0.0009984970092773438" sim_time_ns="51.0" ratio_time="51076.767908309455">
-      <failure error_type="ValueError" error_msg="Cannot convert Logic('X') to int" />
-    </testcase>
+    <property name="random_seed" value="1783881680" />
+    <testcase name="test_reset_and_idle" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="79" time="0.00099945068359375" sim_time_ns="71.0" ratio_time="71039.02290076336" />
+    <testcase name="test_roundtrip_data" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="91" time="0.041510820388793945" sim_time_ns="5161.0" ratio_time="124329.02919435526" />
+    <testcase name="test_roundtrip_k" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="101" time="0.002000093460083008" sim_time_ns="281.0" ratio_time="140493.43473596376" />
+    <testcase name="test_roundtrip_random" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="114" time="0.04100298881530762" sim_time_ns="5041.000000000001" ratio_time="122942.25727559763" />
+    <testcase name="test_invalid_codewords" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="131" time="0.07851529121398926" sim_time_ns="10281.0" ratio_time="130942.64621625972" />
+    <testcase name="test_disparity_error" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="142" time="0.0" sim_time_ns="51.0" ratio_time="inf" />
   </testsuite>
 </testsuites>

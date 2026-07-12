@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-//============================================================================
+
 // dec8b10b -- 8b/10b line decoder (inverse of encoder_8b10b).
 //
 // One 10-bit symbol -> one 8-bit character (+ K flag), with running-disparity
@@ -19,7 +19,7 @@
 //   disp_err : a sub-block's disparity is inconsistent with the incoming RD
 //              (a +disparity block seen at RD+, or -disparity at RD-). The
 //              decoded data is still produced (it does not depend on RD).
-//============================================================================
+
 module dec8b10b (
     input  logic        clk,
     input  logic        rst_n,      // active-low sync reset; RD -> negative
