@@ -1,5 +1,5 @@
 """
-Golden cocotb tests for rtl/dec8b10b.sv (Phase 1, test-first).
+Golden cocotb tests for rtl/dec8b10b.sv 
 
 DUT contract
 ------------

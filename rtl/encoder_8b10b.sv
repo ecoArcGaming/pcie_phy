@@ -1,5 +1,4 @@
 `timescale 1ns / 1ps
-//============================================================================
 // encoder_8b10b -- 8b/10b line encoder
 //
 // One 8-bit character (+ K control flag) -> one 10-bit symbol, with running
@@ -14,7 +13,6 @@
 // Data uses single (RD-independent) 3b/4b codes for y in {1,2,5,6} -- which is
 // what keeps decode unambiguous -- and RD-dependent codes for y in {0,3,4,7}.
 //
-//============================================================================
 module encoder_8b10b (
     input  logic        clk,
     input  logic        rst_n,      // active-low sync reset; RD -> negative

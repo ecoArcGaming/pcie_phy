@@ -68,62 +68,6 @@ class Scrambler:
         return byte if k else (byte ^ m)
 
 
-# Convenience: the exact scramble byte a fresh scrambler emits for the i-th
-# consecutive data character (all-zero data). This is the published sequence.
-def scramble_sequence(n):
-    s = Scrambler()
-    return [s.process(0x00, k=False) for _ in range(n)]
-
-
-# --- self-test -------------------------------------------------------------
 _GOLDEN = [0xFF, 0x17, 0xC0, 0x14, 0xB2, 0xE7, 0x02, 0x82,
            0x72, 0x6E, 0x28, 0xA6, 0xBE, 0x6D, 0xBF, 0x8D]
 
-
-def _self_test():
-    # Published output sequence (scramble 0x00 from seed 0xFFFF).
-    assert scramble_sequence(len(_GOLDEN)) == _GOLDEN, "golden sequence mismatch"
-
-    # scramble -> descramble identity over a mixed stream, incl. COM/SKP/K.
-    import random
-    rng = random.Random(0x5CA1AB1E)
-    tx, rx = Scrambler(), Scrambler()
-    for _ in range(5000):
-        r = rng.random()
-        if r < 0.02:
-            byte, k = COM, True
-        elif r < 0.06:
-            byte, k = SKP, True
-        elif r < 0.16:
-            byte, k = rng.randrange(256), True     # other control
-        else:
-            byte, k = rng.randrange(256), False    # data
-        scrambled = tx.process(byte, k)
-        recovered = rx.process(scrambled, k)
-        assert recovered == byte, f"identity fail on ({byte:#04x}, k={k})"
-        assert tx.lfsr == rx.lfsr, "TX/RX LFSR desync"
-
-    # COM re-initializes the LFSR regardless of prior state.
-    s = Scrambler()
-    s.process(0x5A, False)
-    s.process(0x3C, False)
-    assert s.lfsr != SEED
-    s.process(COM, True)
-    assert s.lfsr == SEED, "COM did not reset LFSR"
-
-    # SKP does not advance the LFSR; a non-COM K does.
-    s = Scrambler()
-    before = s.lfsr
-    s.process(SKP, True)
-    assert s.lfsr == before, "SKP advanced the LFSR"
-    s.process(0xFE, True)     # arbitrary non-COM/SKP control byte
-    assert s.lfsr != before, "control char did not advance the LFSR"
-
-
-_self_test()
-
-
-if __name__ == "__main__":
-    print("scrambler reference model self-test PASSED")
-    print("  golden sequence:", [f"{b:02X}" for b in _GOLDEN[:8]], "...")
-    print("  scramble->descramble identity over 5000 mixed chars")

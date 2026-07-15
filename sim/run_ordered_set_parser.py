@@ -17,17 +17,18 @@ def main():
 
     runner = get_runner(sim)
 
-    print("Compiling scrambler...")
+    print("Compiling ordered_set_parser...")
     runner.build(
-        sources=[rtl_dir / "scrambler.sv"],
-        hdl_toplevel="scrambler",
+        sources=[rtl_dir / "ordered_set_parser.sv"],
+        hdl_toplevel="ordered_set_parser",
         always=True,
-        build_dir=sim_dir / "sim_build_scrambler",
+        build_dir=sim_dir / "sim_build_os_parser",
     )
-    runner.test(hdl_toplevel="scrambler", test_module="test_scrambler")
+    runner.test(hdl_toplevel="ordered_set_parser",
+                test_module="test_ordered_set_parser")
 
 
 if __name__ == "__main__":
-    print("--- scrambler test runner ---")
+    print("--- ordered_set_parser test runner ---")
     main()
     print("--- done ---")

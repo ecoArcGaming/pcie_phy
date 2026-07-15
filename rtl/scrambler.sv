@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-//============================================================================
+
 // scrambler -- PCIe Gen1/Gen2 data scrambler (PCIe Base Spec 4.2.3).
 //
 // 16-bit LFSR, G(X) = X^16 + X^5 + X^4 + X^3 + 1, seed 0xFFFF, advanced 8
@@ -17,7 +17,7 @@
 // The scramble byte is applied LSB-first: data_in[i] XORs lfsr[15-i]. The
 // parallel 8-shift equations below are generated/verified against the
 // published output sequence (scripts/scr_gen -> golden FF,17,C0,14,...).
-//============================================================================
+
 module scrambler (
     input  logic        clk,
     input  logic        rst_n,       // active-low sync reset; LFSR -> 0xFFFF
