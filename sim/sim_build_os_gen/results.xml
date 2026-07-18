@@ -1,13 +1,13 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1784007275" />
-    <testcase name="test_ts1" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="80" time="0.0015172958374023438" sim_time_ns="201.0" ratio_time="132472.5179132621" />
-    <testcase name="test_ts1_with_pad" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="87" time="0.001997709274291992" sim_time_ns="210.99999999999997" ratio_time="105620.97434061342" />
-    <testcase name="test_ts2" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="95" time="0.001997232437133789" sim_time_ns="210.99999999999994" ratio_time="105646.1912379133" />
-    <testcase name="test_skp" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="102" time="0.0010006427764892578" sim_time_ns="91.0" ratio_time="90941.54491303313" />
+    <property name="random_seed" value="1784389609" />
+    <testcase name="test_ts1" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="80" time="0.0029981136322021484" sim_time_ns="201.0" ratio_time="67042.15538767395" />
+    <testcase name="test_ts1_with_pad" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="87" time="0.0009996891021728516" sim_time_ns="210.99999999999997" ratio_time="211065.61984259478" />
+    <testcase name="test_ts2" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="95" time="0.002000093460083008" sim_time_ns="210.99999999999994" ratio_time="105495.07021099055" />
+    <testcase name="test_skp" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="102" time="0.0" sim_time_ns="91.0" ratio_time="inf" />
     <testcase name="test_eios" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="109" time="0.0" sim_time_ns="91.0" ratio_time="inf" />
-    <testcase name="test_fts" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="116" time="0.0" sim_time_ns="91.0" ratio_time="inf" />
-    <testcase name="test_eieos" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="123" time="0.001504659652709961" sim_time_ns="211.0000000000001" ratio_time="140231.04801140874" />
-    <testcase name="test_back_to_back" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="130" time="0.0030100345611572266" sim_time_ns="431.0" ratio_time="143187.72467326734" />
+    <testcase name="test_fts" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="116" time="0.0009999275207519531" sim_time_ns="91.0" ratio_time="91006.59608965188" />
+    <testcase name="test_eieos" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="123" time="0.0009999275207519531" sim_time_ns="211.0000000000001" ratio_time="211015.2942298523" />
+    <testcase name="test_back_to_back" classname="test_ordered_set_gen" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_gen.py" lineno="130" time="0.0020020008087158203" sim_time_ns="431.0" ratio_time="215284.62831963797" />
   </testsuite>
 </testsuites>
