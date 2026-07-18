@@ -27,3 +27,4 @@ fpga/*.str
 
 *.md
 .claude/
+!README.md

@@ -1,7 +1,7 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1784389612" />
-    <testcase name="test_train_and_negotiate" classname="test_ltssm_smoke" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ltssm_smoke.py" lineno="42" time="0.04899859428405762" sim_time_ns="6981.0" ratio_time="142473.47504561712" />
-    <testcase name="test_speed_change" classname="test_ltssm_smoke" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ltssm_smoke.py" lineno="71" time="0.09199905395507812" sim_time_ns="13021.0" ratio_time="141534.0641041589" />
+    <property name="random_seed" value="1784389714" />
+    <testcase name="test_train_and_negotiate" classname="test_ltssm_smoke" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ltssm_smoke.py" lineno="42" time="0.04900026321411133" sim_time_ns="6981.0" ratio_time="142468.62245404386" />
+    <testcase name="test_speed_change" classname="test_ltssm_smoke" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ltssm_smoke.py" lineno="71" time="0.09299850463867188" sim_time_ns="13021.0" ratio_time="140013.00397883425" />
   </testsuite>
 </testsuites>

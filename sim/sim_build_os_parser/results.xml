@@ -1,10 +1,10 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1784389610" />
-    <testcase name="test_each_type" classname="test_ordered_set_parser" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_parser.py" lineno="76" time="0.005999088287353516" sim_time_ns="751.0" ratio_time="125185.68889595421" />
-    <testcase name="test_ts_pad" classname="test_ordered_set_parser" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_parser.py" lineno="89" time="0.0019998550415039062" sim_time_ns="221.0" ratio_time="110508.00953743442" />
-    <testcase name="test_back_to_back" classname="test_ordered_set_parser" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_parser.py" lineno="97" time="0.004000186920166016" sim_time_ns="661.0" ratio_time="165242.27822148052" />
-    <testcase name="test_malformed" classname="test_ordered_set_parser" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_parser.py" lineno="107" time="0.0019996166229248047" sim_time_ns="361.0" ratio_time="180534.6064146894" />
-    <testcase name="test_fuzz" classname="test_ordered_set_parser" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_parser.py" lineno="122" time="0.11499977111816406" sim_time_ns="18161.0" ratio_time="157922.05343903936" />
+    <property name="random_seed" value="1784389711" />
+    <testcase name="test_each_type" classname="test_ordered_set_parser" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_parser.py" lineno="76" time="0.0049991607666015625" sim_time_ns="751.0" ratio_time="150225.2148035101" />
+    <testcase name="test_ts_pad" classname="test_ordered_set_parser" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_parser.py" lineno="89" time="0.0010001659393310547" sim_time_ns="221.0" ratio_time="220963.33349225268" />
+    <testcase name="test_back_to_back" classname="test_ordered_set_parser" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_parser.py" lineno="97" time="0.003998517990112305" sim_time_ns="661.0" ratio_time="165311.2482261046" />
+    <testcase name="test_malformed" classname="test_ordered_set_parser" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_parser.py" lineno="107" time="0.002000570297241211" sim_time_ns="361.0" ratio_time="180448.54534620428" />
+    <testcase name="test_fuzz" classname="test_ordered_set_parser" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ordered_set_parser.py" lineno="122" time="0.11599898338317871" sim_time_ns="18161.0" ratio_time="156561.71692478444" />
   </testsuite>
 </testsuites>
