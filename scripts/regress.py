@@ -32,6 +32,8 @@ SUITES = [
     ("ltssm",              SIM / "run_ltssm.py"),
     ("phy-integration",    SIM / "run_phy.py"),
     ("data-integrity",     SIM / "run_data.py"),
+    ("serial-channel",     SIM / "run_serial.py"),
+    ("rx-pipe-ppm",        SIM / "run_rx_pipe.py"),
 ]
 
 SUMMARY_RE = re.compile(r"TESTS=(\d+) PASS=(\d+) FAIL=(\d+) SKIP=(\d+)")

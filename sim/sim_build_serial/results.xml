@@ -1,0 +1,8 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784398363" />
+    <testcase name="test_clean_channel" classname="test_serial" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_serial.py" lineno="36" time="0.6145138740539551" sim_time_ns="35041.0" ratio_time="57022.30898195043" />
+    <testcase name="test_bit_error_detected" classname="test_serial" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_serial.py" lineno="57" time="0.11951899528503418" sim_time_ns="7451.0" ratio_time="62341.55484850359" />
+    <testcase name="test_fault_triggers_recovery" classname="test_serial" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_serial.py" lineno="87" time="0.17202425003051758" sim_time_ns="10351.0" ratio_time="60171.74903052159" />
+  </testsuite>
+</testsuites>

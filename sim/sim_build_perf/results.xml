@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784397817" />
+    <testcase name="test_perf" classname="test_perf" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_perf.py" lineno="35" time="0.7483935356140137" sim_time_ns="45681.0" ratio_time="61038.74208710445" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,73 @@
+{
+  "train_cycles": 499,
+  "latency_symbols": 1,
+  "l0_utilization": 1.0,
+  "throughput_gen1_MBps": 250.0,
+  "throughput_gen2_MBps": 500.0,
+  "train_cycles_2g5": 499,
+  "speed_change_cycles": 621,
+  "clk_tol": [
+    {
+      "ppm": 200,
+      "survived": true,
+      "adds": 0,
+      "dels": 57
+    },
+    {
+      "ppm": 600,
+      "survived": true,
+      "adds": 0,
+      "dels": 81
+    },
+    {
+      "ppm": 1000,
+      "survived": true,
+      "adds": 0,
+      "dels": 84
+    },
+    {
+      "ppm": 2000,
+      "survived": true,
+      "adds": 0,
+      "dels": 90
+    },
+    {
+      "ppm": 5000,
+      "survived": false,
+      "adds": 0,
+      "dels": 90
+    },
+    {
+      "ppm": 10000,
+      "survived": false,
+      "adds": 0,
+      "dels": 89
+    },
+    {
+      "ppm": -1000,
+      "survived": true,
+      "adds": 2,
+      "dels": 0
+    },
+    {
+      "ppm": -5000,
+      "survived": true,
+      "adds": 18,
+      "dels": 0
+    }
+  ],
+  "ber": [
+    {
+      "nbits": 1,
+      "detected_frac": 0.99
+    },
+    {
+      "nbits": 2,
+      "detected_frac": 0.645
+    },
+    {
+      "nbits": 3,
+      "detected_frac": 0.995
+    }
+  ]
+}

@@ -60,6 +60,7 @@ module link_trainer #(
         .rx_ts_link_pad (p_link_pad), .rx_ts_lane_pad (p_lane_pad),
         .tx_os_done (g_done),
         .speed_change_req (speed_change_req), .loopback_req (loopback_req),
+        .rx_error (1'b0),
         .tx_enable (l_tx_en), .tx_os_type (l_os_type),
         .tx_link (l_link), .tx_lane (l_lane), .tx_nfts (l_nfts),
         .tx_rate (l_rate), .tx_train (l_train),

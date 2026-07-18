@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784398185" />
+    <testcase name="test_error_detection" classname="test_ber" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_ber.py" lineno="72" time="0.8536355495452881" sim_time_ns="143991.0" ratio_time="168679.7135811655" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,13 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784397909" />
+    <testcase name="test_clk_tol_+200" classname="test_clk_tol" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_clk_tol.py" lineno="83" time="0.4079263210296631" sim_time_ns="40121.0" ratio_time="98353.54555873958" />
+    <testcase name="test_clk_tol_+600" classname="test_clk_tol" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_clk_tol.py" lineno="83" time="0.42516136169433594" sim_time_ns="40101.00000000001" ratio_time="94319.48340787864" />
+    <testcase name="test_clk_tol_+1000" classname="test_clk_tol" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_clk_tol.py" lineno="83" time="0.4092423915863037" sim_time_ns="40091.0" ratio_time="97963.94709892938" />
+    <testcase name="test_clk_tol_+2000" classname="test_clk_tol" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_clk_tol.py" lineno="83" time="0.40088987350463867" sim_time_ns="40051.0" ratio_time="99905.24242946878" />
+    <testcase name="test_clk_tol_+5000" classname="test_clk_tol" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_clk_tol.py" lineno="83" time="0.3970460891723633" sim_time_ns="39931.0" ratio_time="100570.18842128776" />
+    <testcase name="test_clk_tol_+10000" classname="test_clk_tol" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_clk_tol.py" lineno="83" time="0.4062058925628662" sim_time_ns="39731.0" ratio_time="97810.00405810474" />
+    <testcase name="test_clk_tol_-1000" classname="test_clk_tol" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_clk_tol.py" lineno="83" time="0.39015936851501465" sim_time_ns="40161.0" ratio_time="102934.86006207351" />
+    <testcase name="test_clk_tol_-5000" classname="test_clk_tol" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_clk_tol.py" lineno="83" time="0.40422534942626953" sim_time_ns="40321.0" ratio_time="99748.81599392253" />
+  </testsuite>
+</testsuites>

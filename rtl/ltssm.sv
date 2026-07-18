@@ -29,7 +29,9 @@ module ltssm #(
     parameter int N_TRAIN     = 8,
     parameter int TX_AFTER    = 4,
     parameter int DETECT_TIME = 16,
-    parameter int SPEED_TIME  = 16
+    parameter int SPEED_TIME  = 16,
+    parameter int ERR_THRESH  = 8,    // decode errors in L0 before Recovery
+    parameter int L0_TS_THRESH = 8    // training sets in L0 -> follow peer to Recovery
 ) (
     input  logic        clk,
     input  logic        rst_n,
@@ -49,6 +51,7 @@ module ltssm #(
     // control
     input  logic        speed_change_req,
     input  logic        loopback_req,
+    input  logic        rx_error,       // decoder code/disparity error (retrain trigger)
 
     // to ordered_set_gen
     output logic        tx_enable,
@@ -74,7 +77,7 @@ module ltssm #(
                            RCVR_CFG = 4'd6, RCVR_SPEED = 4'd7, LOOPBACK = 4'd8;
     localparam logic [2:0] OS_TS1 = 3'd0, OS_TS2 = 3'd1, OS_SKP = 3'd2;
 
-    logic [15:0] detect_ctr, speed_ctr;
+    logic [15:0] detect_ctr, speed_ctr, err_cnt, l0_ts_cnt;
     logic [15:0] rx_cnt, tx_after;
     logic        rx_seen;
     logic        sc_pending, changed;
@@ -151,7 +154,9 @@ module ltssm #(
             DETECT:     if (detect_ctr >= DETECT_TIME[15:0]) phase_reset = 1'b1;
             POLLING, CONFIG_LW, CONFIG_CMP, RCVR_LOCK, RCVR_CFG:
                         if (phase_done) phase_reset = 1'b1;
-            L0:         if (speed_change_req || rx_sc) phase_reset = 1'b1;
+            L0:         if (speed_change_req || rx_sc ||
+                            err_cnt >= ERR_THRESH[15:0] ||
+                            l0_ts_cnt >= L0_TS_THRESH[15:0]) phase_reset = 1'b1;
             RCVR_SPEED: if (speed_ctr >= SPEED_TIME[15:0]) phase_reset = 1'b1;
             LOOPBACK:   if (!loopback_req) phase_reset = 1'b1;
             default: ;
@@ -164,7 +169,7 @@ module ltssm #(
             state <= DETECT; detect_ctr <= 16'd0; speed_ctr <= 16'd0;
             rx_cnt <= 16'd0; tx_after <= 16'd0; rx_seen <= 1'b0;
             sc_pending <= 1'b0; changed <= 1'b0; rate <= 1'b0;
-            assigned <= 1'b0;
+            assigned <= 1'b0; err_cnt <= 16'd0; l0_ts_cnt <= 16'd0;
             my_link <= (ROLE != 0) ? LINK_NUM[7:0] : 8'h00;
             my_lane <= (ROLE != 0) ? LANE_NUM[7:0] : 8'h00;
         end else begin
@@ -182,6 +187,15 @@ module ltssm #(
             // pick up a peer speed-change request while retraining
             if ((state == RCVR_LOCK || state == RCVR_CFG) && rx_sc) sc_pending <= 1'b1;
 
+            // in L0, watch for decode errors (own fault) and for received
+            // training sets (peer entered Recovery); reset both elsewhere.
+            if (state == L0) begin
+                if (rx_error) err_cnt   <= err_cnt + 16'd1;
+                if (rx_train) l0_ts_cnt <= l0_ts_cnt + 16'd1;
+            end else begin
+                err_cnt <= 16'd0; l0_ts_cnt <= 16'd0;
+            end
+
             if (loopback_req) begin
                 state <= LOOPBACK;
             end else begin
@@ -195,6 +209,9 @@ module ltssm #(
                     CONFIG_CMP: if (phase_done) state <= L0;
                     L0: if (speed_change_req || rx_sc) begin
                             sc_pending <= 1'b1; state <= RCVR_LOCK;
+                        end else if (err_cnt >= ERR_THRESH[15:0] ||
+                                     l0_ts_cnt >= L0_TS_THRESH[15:0]) begin
+                            state <= RCVR_LOCK;    // fault / peer retrain (same rate)
                         end
                     RCVR_LOCK:  if (phase_done) state <= RCVR_CFG;
                     RCVR_CFG:   if (phase_done) begin

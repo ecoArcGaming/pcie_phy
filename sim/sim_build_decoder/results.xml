@@ -1,11 +1,11 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1784392949" />
-    <testcase name="test_reset_and_idle" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="79" time="0.0009992122650146484" sim_time_ns="71.0" ratio_time="71055.97327606776" />
-    <testcase name="test_roundtrip_data" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="91" time="0.0409998893737793" sim_time_ns="5161.0" ratio_time="125878.38842561902" />
-    <testcase name="test_roundtrip_k" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="101" time="0.003001689910888672" sim_time_ns="281.0" ratio_time="93613.93359809373" />
-    <testcase name="test_roundtrip_random" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="114" time="0.037000179290771484" sim_time_ns="5041.000000000001" ratio_time="136242.5830530318" />
-    <testcase name="test_invalid_codewords" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="131" time="0.07200050354003906" sim_time_ns="10281.0" ratio_time="142790.6680441866" />
-    <testcase name="test_disparity_error" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="142" time="0.0" sim_time_ns="51.0" ratio_time="inf" />
+    <property name="random_seed" value="1784398357" />
+    <testcase name="test_reset_and_idle" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="79" time="0.0010004043579101562" sim_time_ns="71.0" ratio_time="70971.30219256434" />
+    <testcase name="test_roundtrip_data" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="91" time="0.04000282287597656" sim_time_ns="5161.0" ratio_time="129015.89510322796" />
+    <testcase name="test_roundtrip_k" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="101" time="0.002002239227294922" sim_time_ns="281.0" ratio_time="140342.8702071922" />
+    <testcase name="test_roundtrip_random" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="114" time="0.03700375556945801" sim_time_ns="5041.000000000001" ratio_time="136229.41570181376" />
+    <testcase name="test_invalid_codewords" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="131" time="0.07251429557800293" sim_time_ns="10281.0" ratio_time="141778.9405254696" />
+    <testcase name="test_disparity_error" classname="test_dec8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_dec8b10b.py" lineno="142" time="0.001001119613647461" sim_time_ns="51.0" ratio_time="50942.96356275304" />
   </testsuite>
 </testsuites>
