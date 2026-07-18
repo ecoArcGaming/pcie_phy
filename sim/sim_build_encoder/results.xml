@@ -1,12 +1,12 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1784389709" />
-    <testcase name="test_reset_and_idle" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="103" time="0.0010018348693847656" sim_time_ns="71.0" ratio_time="70869.96287482152" />
-    <testcase name="test_exhaustive_data" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="116" time="0.04199934005737305" sim_time_ns="5161.0" ratio_time="122882.88322982777" />
-    <testcase name="test_all_data_bytes_both_disparities" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="125" time="0.06399989128112793" sim_time_ns="7831.0" ratio_time="122359.58285618492" />
-    <testcase name="test_all_k_codes_both_disparities" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="134" time="0.0029993057250976562" sim_time_ns="411.0" ratio_time="137031.71255961843" />
-    <testcase name="test_dx_a7_alternate" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="144" time="0.0019998550415039062" sim_time_ns="161.0" ratio_time="80505.83500238435" />
-    <testcase name="test_invalid_k_sets_code_err" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="159" time="0.019999980926513672" sim_time_ns="2481.0" ratio_time="124050.11830341177" />
-    <testcase name="test_random_stream" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="173" time="0.24599981307983398" sim_time_ns="30041.0" ratio_time="122117.97896875163" />
+    <property name="random_seed" value="1784391107" />
+    <testcase name="test_reset_and_idle" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="103" time="0.0010037422180175781" sim_time_ns="71.0" ratio_time="70735.29311163895" />
+    <testcase name="test_exhaustive_data" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="116" time="0.041997671127319336" sim_time_ns="5161.0" ratio_time="122887.76642766717" />
+    <testcase name="test_all_data_bytes_both_disparities" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="125" time="0.06699919700622559" sim_time_ns="7831.0" ratio_time="116881.99784353148" />
+    <testcase name="test_all_k_codes_both_disparities" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="134" time="0.003000020980834961" sim_time_ns="411.0" ratio_time="136999.04188190415" />
+    <testcase name="test_dx_a7_alternate" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="144" time="0.001001119613647461" sim_time_ns="161.0" ratio_time="160819.94379614195" />
+    <testcase name="test_invalid_k_sets_code_err" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="159" time="0.02099895477294922" sim_time_ns="2481.0" ratio_time="118148.73772650893" />
+    <testcase name="test_random_stream" classname="test_encoder_8b10b" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_encoder_8b10b.py" lineno="173" time="0.2480006217956543" sim_time_ns="30041.0" ratio_time="121132.76080716023" />
   </testsuite>
 </testsuites>

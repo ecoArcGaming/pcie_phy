@@ -30,6 +30,7 @@ SUITES = [
     ("ordered-set-parser", SIM / "run_ordered_set_parser.py"),
     ("elastic-buffer",     SIM / "run_elastic_buffer.py"),
     ("ltssm",              SIM / "run_ltssm.py"),
+    ("phy-integration",    SIM / "run_phy.py"),
 ]
 
 SUMMARY_RE = re.compile(r"TESTS=(\d+) PASS=(\d+) FAIL=(\d+) SKIP=(\d+)")

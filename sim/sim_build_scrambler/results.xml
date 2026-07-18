@@ -1,9 +1,9 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1784389710" />
-    <testcase name="test_golden_sequence" classname="test_scrambler" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_scrambler.py" lineno="66" time="0.0019998550415039062" sim_time_ns="191.0" ratio_time="95506.9222699094" />
-    <testcase name="test_random_data" classname="test_scrambler" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_scrambler.py" lineno="82" time="0.07699894905090332" sim_time_ns="10041.0" ratio_time="130404.37725146073" />
-    <testcase name="test_mixed_com_skp_k" classname="test_scrambler" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_scrambler.py" lineno="91" time="0.15399956703186035" sim_time_ns="20041.0" ratio_time="130136.72951336154" />
-    <testcase name="test_bypass" classname="test_scrambler" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_scrambler.py" lineno="112" time="0.003999233245849609" sim_time_ns="681.0" ratio_time="170282.64123047574" />
+    <property name="random_seed" value="1784391109" />
+    <testcase name="test_golden_sequence" classname="test_scrambler" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_scrambler.py" lineno="66" time="0.0019991397857666016" sim_time_ns="191.0" ratio_time="95541.09290399523" />
+    <testcase name="test_random_data" classname="test_scrambler" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_scrambler.py" lineno="82" time="0.07699966430664062" sim_time_ns="10041.0" ratio_time="130403.16591528362" />
+    <testcase name="test_mixed_com_skp_k" classname="test_scrambler" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_scrambler.py" lineno="91" time="0.1544327735900879" sim_time_ns="20041.0" ratio_time="129771.6769187542" />
+    <testcase name="test_bypass" classname="test_scrambler" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_scrambler.py" lineno="112" time="0.004024982452392578" sim_time_ns="681.0" ratio_time="169193.28420803222" />
   </testsuite>
 </testsuites>
