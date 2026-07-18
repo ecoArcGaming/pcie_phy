@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784392954" />
+    <testcase name="test_payload_byte_exact" classname="test_data_integrity" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_data_integrity.py" lineno="26" time="0.7808873653411865" sim_time_ns="45031.0" ratio_time="57666.447171065425" />
+  </testsuite>
+</testsuites>

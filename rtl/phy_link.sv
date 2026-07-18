@@ -32,6 +32,8 @@ module phy_link (
     phy_top #(.ROLE(1), .LINK_NUM(1), .LANE_NUM(0)) u_a (
         .clk, .rst_n,
         .speed_change_req (sc_req_a), .loopback_req (1'b0),
+        .mac_tx_data (8'h0), .mac_tx_valid (1'b0),
+        .mac_rx_data (), .mac_rx_valid (),
         .rx_symbol (b2a), .rx_symbol_valid (b2a_v),
         .tx_symbol (a2b), .tx_symbol_valid (a2b_v),
         .state (state_a), .link_up (up_a), .rate (rate_a),
@@ -42,6 +44,8 @@ module phy_link (
     phy_top #(.ROLE(0)) u_b (
         .clk, .rst_n,
         .speed_change_req (1'b0), .loopback_req (lb_req_b),
+        .mac_tx_data (8'h0), .mac_tx_valid (1'b0),
+        .mac_rx_data (), .mac_rx_valid (),
         .rx_symbol (a2b), .rx_symbol_valid (a2b_v),
         .tx_symbol (b2a), .tx_symbol_valid (b2a_v),
         .state (state_b), .link_up (up_b), .rate (rate_b),

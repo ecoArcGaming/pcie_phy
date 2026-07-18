@@ -31,6 +31,7 @@ SUITES = [
     ("elastic-buffer",     SIM / "run_elastic_buffer.py"),
     ("ltssm",              SIM / "run_ltssm.py"),
     ("phy-integration",    SIM / "run_phy.py"),
+    ("data-integrity",     SIM / "run_data.py"),
 ]
 
 SUMMARY_RE = re.compile(r"TESTS=(\d+) PASS=(\d+) FAIL=(\d+) SKIP=(\d+)")

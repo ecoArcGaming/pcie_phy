@@ -1,6 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1784391112" />
-    <testcase name="test_loopback_echo" classname="test_loopback" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_loopback.py" lineno="14" time="0.03500008583068848" sim_time_ns="5051.0" ratio_time="144313.9318124536" />
+    <property name="random_seed" value="1784392953" />
+    <testcase name="test_loopback_echo" classname="test_loopback" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_loopback.py" lineno="14" time="0.03800201416015625" sim_time_ns="5051.0" ratio_time="132914.00762899016" />
   </testsuite>
 </testsuites>

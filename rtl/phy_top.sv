@@ -27,6 +27,12 @@ module phy_top #(
     input  logic        speed_change_req,
     input  logic        loopback_req,
 
+    // MAC payload interface (carried in L0)
+    input  logic [7:0]  mac_tx_data,
+    input  logic        mac_tx_valid,
+    output logic [7:0]  mac_rx_data,
+    output logic        mac_rx_valid,
+
     // 10-bit symbol interface (to/from the channel)
     input  logic [9:0]  rx_symbol,
     input  logic        rx_symbol_valid,
@@ -43,6 +49,8 @@ module phy_top #(
     output logic        rx_code_err,
     output logic        rx_disp_err
 );
+    localparam logic [3:0] ST_L0 = 4'd4;   // LTSSM L0 state code
+
     // ---- RX chain: decode -> descramble -> parse -----------------------
     logic [7:0] d_data;   logic d_k, d_valid;
     dec8b10b u_dec (
@@ -71,6 +79,11 @@ module phy_top #(
         .ts_rate (p_rate), .ts_train (),
         .ts_link_pad (p_link_pad), .ts_lane_pad (p_lane_pad)
     );
+
+    // In L0, descrambled data characters (not part of an ordered set) are the
+    // MAC payload; ordered sets always start with COM (a K character).
+    assign mac_rx_data  = ds_data;
+    assign mac_rx_valid = ds_valid & ~ds_k & (state == ST_L0);
 
     // ---- LTSSM ---------------------------------------------------------
     logic       l_tx_en, l_link_pad, l_lane_pad;
@@ -107,10 +120,27 @@ module phy_top #(
         .busy (g_busy), .done (g_done)
     );
 
+    // Switch to MAC payload only after the in-flight ordered set finishes once
+    // in L0 (first g_done). Truncating that last TS2 would starve a peer still
+    // completing Configuration and stall its training.
+    logic l0_data;
+    always_ff @(posedge clk) begin
+        if (!rst_n)                   l0_data <= 1'b0;
+        else if (state != ST_L0)      l0_data <= 1'b0;
+        else if (g_done)              l0_data <= 1'b1;
+    end
+
+    // In L0 the TX carries MAC payload (data character, or scrambled logical
+    // idle 0x00 when the MAC has nothing); otherwise the ordered-set generator.
+    wire        l0_tx    = l0_data & ~loopback_active;
+    wire [7:0]  tx_char  = l0_tx ? (mac_tx_valid ? mac_tx_data : 8'h00) : g_data;
+    wire        tx_char_k = l0_tx ? 1'b0 : g_k;
+    wire        tx_char_v = l0_tx ? 1'b1 : g_valid;
+
     logic [7:0] s_data;  logic s_k, s_valid;
     scrambler u_scr (
         .clk, .rst_n, .scramble_en (1'b1),
-        .valid_in (g_valid), .data_in (g_data), .k_in (g_k),
+        .valid_in (tx_char_v), .data_in (tx_char), .k_in (tx_char_k),
         .data_out (s_data), .k_out (s_k), .valid_out (s_valid)
     );
 
