@@ -127,6 +127,7 @@ module encoder_8b10b (
                 3'd5: begin k_neg = 10'b0011111010; k_pos = 10'b1100000101; end
                 3'd6: begin k_neg = 10'b0011110110; k_pos = 10'b1100001001; end
                 3'd7: begin k_neg = 10'b0011111000; k_pos = 10'b1100000111; end
+                default: begin k_neg = 10'b0; k_pos = 10'b0; end
             endcase
         end else if (y == 3'd7 &&
                      (x==5'd23 || x==5'd27 || x==5'd29 || x==5'd30)) begin
@@ -136,6 +137,7 @@ module encoder_8b10b (
                 5'd27: begin k_neg = 10'b1101101000; k_pos = 10'b0010010111; end
                 5'd29: begin k_neg = 10'b1011101000; k_pos = 10'b0100010111; end
                 5'd30: begin k_neg = 10'b0111101000; k_pos = 10'b1000010111; end
+                default: begin k_neg = 10'b0; k_pos = 10'b0; end
             endcase
         end
     end

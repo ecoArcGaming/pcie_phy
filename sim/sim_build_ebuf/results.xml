@@ -1,8 +1,8 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1784398358" />
-    <testcase name="test_write_faster" classname="test_elastic_buffer" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_elastic_buffer.py" lineno="104" time="0.5305821895599365" sim_time_ns="50075.0" ratio_time="94377.46118378393" />
-    <testcase name="test_write_slower" classname="test_elastic_buffer" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_elastic_buffer.py" lineno="112" time="0.5091531276702881" sim_time_ns="50165.00000000001" ratio_time="98526.35145253457" />
-    <testcase name="test_low_ppm" classname="test_elastic_buffer" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_elastic_buffer.py" lineno="120" time="0.5057666301727295" sim_time_ns="50115.000000000015" ratio_time="99087.2015081041" />
+    <property name="random_seed" value="1788106874" />
+    <testcase name="test_write_faster" classname="test_elastic_buffer" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_elastic_buffer.py" lineno="104" time="0.501854658126831" sim_time_ns="50075.0" ratio_time="99779.88485133242" />
+    <testcase name="test_write_slower" classname="test_elastic_buffer" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_elastic_buffer.py" lineno="112" time="0.5039470195770264" sim_time_ns="50165.00000000001" ratio_time="99544.19423316479" />
+    <testcase name="test_low_ppm" classname="test_elastic_buffer" file="C:\Users\erik3\Downloads\pcie_phy\tb\test_elastic_buffer.py" lineno="120" time="0.5042526721954346" sim_time_ns="50115.000000000015" ratio_time="99384.69890859956" />
   </testsuite>
 </testsuites>

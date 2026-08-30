@@ -1,0 +1,4 @@
+
+*** Running vivado
+    with args -log phy_link_serial.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source phy_link_serial.tcl
+

@@ -49,6 +49,7 @@ module elastic_buffer (
 
     // ---- write domain --------------------------------------------------
     logic [5:0] wbin, wgray;
+    logic [5:0] rbin, rgray;
     logic [5:0] rq1, rq2;                  // read gray, synced into wr domain
     logic       wfull;                     // REGISTERED (breaks the comb loop)
 
@@ -73,7 +74,6 @@ module elastic_buffer (
     end
 
     // ---- read domain ---------------------------------------------------
-    logic [5:0] rbin, rgray;
     logic [5:0] wq1, wq2;                   // write gray, synced into rd domain
     logic       started;
 
